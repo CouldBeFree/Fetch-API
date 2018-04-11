@@ -11,16 +11,36 @@ function getText() {
 }
 
 function getJson() {
-    fetch('https://api.github.com/users').then(function (res) {
-        return res.json();
-    }).then(function (data) {
+    fetch('https://api.github.com/users').then( res => res.json()
+    ).then(data => {
         console.log(data);
         let output = '';
         data.forEach(function (user) {
             output += `<li>${user.url}</li>`;
         });
         document.getElementById('output').innerHTML = output;
-    }).catch(function (err) {
-        console.log(err);
-    });
+    }).catch(err => console.log(err));
 }
+
+/*const sayHello = function () {
+    console.log('Hello');
+};*/
+
+/*
+const hello = () => {
+  console.log('Hello');
+};
+
+const sayHello = (name, secondName) => console.log(`Hello ${name} ${secondName}`);
+
+sayHello('Sasha', 'Zoria');*/
+
+const users = ['Nathan', 'John', 'Brad'];
+
+/*const nameLength = users.map((name)=>{
+   return name.length;
+});*/
+
+const nameLength = users.map(name => name.length);
+
+console.log(nameLength);
